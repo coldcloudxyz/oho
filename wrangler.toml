@@ -1,0 +1,7 @@
+name = "oho"
+main = "src_worker.js"
+compatibility_date = "2026-09-24"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"

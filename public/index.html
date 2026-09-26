@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>आज का संदेश — जो तुम्हें आज पढ़ना था</title>
+<meta name="description" content="कुछ शब्द सही समय पर मिलते हैं। शायद आज तुम्हारी बारी है।">
+<meta property="og:title" content="जो संदेश तुम्हें आज पढ़ना था">
+<meta property="og:description" content="कुछ शब्द सही समय पर मिलते हैं। शायद आज तुम्हारी बारी है।">
+<meta name="theme-color" content="#080604">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#070504;color:#f6e7c8;font-family:"Noto Sans Devanagari",serif}
+body{overflow-x:hidden}.sky{position:fixed;inset:0;z-index:-3;background:radial-gradient(circle at 50% 35%,#3a210c 0,#170d07 28%,#090605 62%,#030303 100%)}
+.stars{position:fixed;inset:0;z-index:-2;opacity:.75;background-image:radial-gradient(#f8d78b 1px,transparent 1px),radial-gradient(#fff0bd .8px,transparent .8px);background-size:97px 97px,173px 173px;background-position:12px 8px,61px 42px;mask-image:linear-gradient(to bottom,#fff,transparent 92%)}
+.moon{position:fixed;top:8vh;right:10vw;width:90px;height:90px;border-radius:50%;background:#ffe5a8;box-shadow:0 0 50px #f4b95b55,0 0 100px #f4b95b22;opacity:.8}
+.wrap{max-width:760px;margin:auto;padding:34px 20px 70px;text-align:center}.brand{letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:#cda866;margin-bottom:40px}
+.lotus{width:150px;height:100px;margin:0 auto 20px;position:relative;filter:drop-shadow(0 0 25px #e5a52c66)}
+.petal{position:absolute;left:50%;bottom:5px;width:55px;height:90px;border:1px solid #d9a94c88;background:linear-gradient(180deg,#ffe6a233,#8e4e0b22);border-radius:70% 10% 70% 10%;transform-origin:bottom center}
+.p1{transform:translateX(-50%) rotate(0)}.p2{transform:translateX(-50%) rotate(28deg)}.p3{transform:translateX(-50%) rotate(-28deg)}.p4{transform:translateX(-50%) rotate(52deg);opacity:.75}.p5{transform:translateX(-50%) rotate(-52deg);opacity:.75}
+h1{font-family:"DM Serif Display","Noto Sans Devanagari",serif;font-size:clamp(40px,8vw,70px);line-height:1.05;font-weight:400;margin:0 auto 18px;max-width:680px}
+.sub{color:#d7c39e;font-size:16px;line-height:1.9;max-width:540px;margin:0 auto 35px}
+.card{border:1px solid #9e6e2d66;background:linear-gradient(145deg,#160d06cc,#0a0705dd);box-shadow:0 20px 80px #0009, inset 0 0 60px #d8962310;border-radius:24px;padding:28px 22px;margin:22px auto;backdrop-filter:blur(8px)}
+label{display:block;text-align:left;color:#dbc394;font-size:13px;margin:0 0 8px}
+input{width:100%;padding:17px 16px;border-radius:14px;border:1px solid #9e6e2d88;background:#080604;color:#fff2d2;font-size:17px;outline:none}
+input:focus{border-color:#e0af51;box-shadow:0 0 0 3px #e0af5114}
+.btn{width:100%;border:0;border-radius:999px;padding:16px 20px;margin-top:18px;background:linear-gradient(90deg,#a96716,#e4b45a,#a96716);color:#160c03;font-weight:800;font-size:16px;cursor:pointer;box-shadow:0 10px 30px #b7772233}
+.btn:disabled{opacity:.45;cursor:not-allowed}.step{display:none}.step.active{display:block}.choices{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.choice{border:1px solid #95662966;border-radius:14px;padding:14px 10px;background:#0b0705;color:#e8d2a7;cursor:pointer}.choice.selected{border-color:#e5b65f;background:#5e38122e;box-shadow:0 0 25px #d39b3b16}
+.price{font-size:28px;color:#f4c76e;margin:8px}.tiny{font-size:12px;color:#9f8d70;line-height:1.7}.loading{min-height:230px;display:flex;align-items:center;justify-content:center;flex-direction:column}.orb{width:70px;height:70px;border-radius:50%;border:1px solid #d7a64f99;box-shadow:0 0 45px #d7a64f55,inset 0 0 25px #d7a64f33;animation:pulse 1.8s infinite}.loading p{color:#d9c298;margin-top:25px;animation:fade 1.5s infinite}@keyframes pulse{50%{transform:scale(1.12);box-shadow:0 0 80px #d7a64f88}}@keyframes fade{50%{opacity:.35}}
+.reveal{padding:34px 24px;border:1px solid #c4934566;background:linear-gradient(160deg,#201106,#0b0704);border-radius:22px;box-shadow:0 25px 80px #000}.symbol{font-size:38px;color:#e5b45b;margin-bottom:10px}.message{font-family:"DM Serif Display",serif;font-size:28px;line-height:1.55;color:#f9e5bd;margin:20px auto;max-width:600px}.shareRow{display:flex;gap:10px}.shareRow button{flex:1;padding:13px;border-radius:999px;border:1px solid #9d7138;background:#100a06;color:#e7cf9f;cursor:pointer}
+.hidden{display:none!important}.err{color:#ffb0a0;font-size:13px;margin-top:12px}.divider{height:1px;background:linear-gradient(90deg,transparent,#9b6b2d66,transparent);margin:28px 0}
+footer{margin-top:40px;color:#756852;font-size:11px;line-height:1.7}
+@media(max-width:520px){.choices{grid-template-columns:1fr}.moon{width:60px;height:60px;right:7vw}.card{padding:22px 16px}.message{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="sky"></div><div class="stars"></div><div class="moon"></div>
+<main class="wrap">
+  <div class="brand">आज का संदेश</div>
+  <div class="lotus"><i class="petal p1"></i><i class="petal p2"></i><i class="petal p3"></i><i class="petal p4"></i><i class="petal p5"></i></div>
+
+  <section id="intro" class="step active">
+    <h1>जो संदेश तुम्हें आज पढ़ना था।</h1>
+    <p class="sub">कुछ शब्द सही समय पर मिलते हैं।<br>शायद आज तुम्हारी बारी है।</p>
+    <div class="card">
+      <label for="name">पहले अपना नाम बताओ</label>
+      <input id="name" maxlength="40" placeholder="तुम्हारा नाम..." autocomplete="name">
+      <button class="btn" id="nameBtn">आगे बढ़ो</button>
+      <div class="err" id="nameErr"></div>
+    </div>
+  </section>
+
+  <section id="feeling" class="step">
+    <h1 style="font-size:38px">आज तुम्हारा दिल किस चीज़ की तलाश में है?</h1>
+    <p class="sub">बस वही चुनो जो अभी सबसे करीब लगता है।</p>
+    <div class="card">
+      <div class="choices" id="choices">
+        <button class="choice" data-v="himmat">हिम्मत</button>
+        <button class="choice" data-v="sukoon">सुकून</button>
+        <button class="choice" data-v="disha">दिशा</button>
+        <button class="choice" data-v="pyaar">प्यार</button>
+        <button class="choice" data-v="shuruaat">नई शुरुआत</button>
+        <button class="choice" data-v="sanket">बस एक संकेत</button>
+      </div>
+      <button class="btn" id="payBtn" disabled>₹9 देकर अपना संदेश खोलो</button>
+      <div class="tiny">एक छोटा-सा अनुभव • तुरंत परिणाम</div>
+      <div class="err" id="payErr"></div>
+    </div>
+  </section>
+
+  <section id="loading" class="step">
+    <div class="card loading">
+      <div class="orb"></div>
+      <p id="loadText">तुम्हारा नाम पढ़ा जा रहा है...</p>
+    </div>
+  </section>
+
+  <section id="result" class="step">
+    <div class="reveal">
+      <div class="symbol">✦</div>
+      <div class="tiny">तुम्हारे लिए चुने गए शब्द</div>
+      <div class="message" id="message"></div>
+      <div class="divider"></div>
+      <p class="tiny">इसे एक भविष्यवाणी नहीं, बल्कि आज के लिए एक छोटा-सा आईना समझो।</p>
+      <div class="shareRow">
+        <button id="copyBtn">संदेश कॉपी करो</button>
+        <button id="shareBtn">किसी को भेजो</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>यह अनुभव मनोरंजन और आत्म-चिंतन के लिए है। इसे किसी पेशेवर सलाह या निश्चित भविष्यवाणी के रूप में न लें।</footer>
+</main>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+const state={name:"",feeling:""};
+const $=id=>document.getElementById(id);
+function show(id){document.querySelectorAll(".step").forEach(x=>x.classList.remove("active"));$(id).classList.add("active");window.scrollTo({top:0,behavior:"smooth"})}
+
+$("nameBtn").onclick=()=>{
+  const n=$("name").value.trim();
+  if(n.length<2){$("nameErr").textContent="अपना नाम लिखो, फिर आगे बढ़ते हैं।";return}
+  state.name=n.slice(0,40);$("nameErr").textContent="";show("feeling");
+};
+$("name").addEventListener("keydown",e=>{if(e.key==="Enter")$("nameBtn").click()});
+
+document.querySelectorAll(".choice").forEach(btn=>{
+  btn.onclick=()=>{
+    document.querySelectorAll(".choice").forEach(x=>x.classList.remove("selected"));
+    btn.classList.add("selected");state.feeling=btn.dataset.v;updatePayState();
+  }
+});
+function updatePayState(){$("payBtn").disabled=!state.feeling}
+
+const messages={
+  himmat:n=>`${n}, जिस चीज़ से तुम डर रहे हो, शायद वही तुम्हें अगली जगह तक ले जाने वाली है। हर बार पूरी तरह तैयार होना ज़रूरी नहीं। आज बस एक कदम अपने डर से आगे रखना। तुम्हारे अंदर जितनी हिम्मत है, तुमने अभी उसका पूरा इस्तेमाल नहीं किया है।`,
+  sukoon:n=>`${n}, हर सवाल का जवाब आज मिलना ज़रूरी नहीं है। कुछ चीज़ें तब साफ होती हैं जब हम उन्हें पकड़कर रखना छोड़ देते हैं। आज खुद पर थोड़ा कम दबाव डालो। तुम्हें हर समय मजबूत दिखने की ज़रूरत नहीं।`,
+  disha:n=>`${n}, तुम्हें पूरी मंज़िल देखने की ज़रूरत नहीं। अगला सही कदम दिखाई दे जाए, इतना काफी है। जिस रास्ते पर तुम्हारा मन बार-बार लौटता है, उसे नज़रअंदाज़ मत करो। कभी-कभी दिशा शोर में नहीं, भीतर की शांति में मिलती है।`,
+  pyaar:n=>`${n}, प्यार की शुरुआत किसी और से पहले खुद के साथ होती है। जो रिश्ता तुम्हें अपनी कीमत भूलने पर मजबूर करे, उसके पीछे खुद को मत खोना। जो तुम्हारे लिए है, उसमें तुम्हें लगातार अपने होने का सबूत नहीं देना पड़ेगा।`,
+  shuruaat:n=>`${n}, तुम्हें फिर से शुरू करने के लिए किसी की अनुमति नहीं चाहिए। पुरानी कहानी का अगला पन्ना खाली है। इस बार वही मत बनो जो सबने तुमसे उम्मीद की थी—वह बनो जिसकी तरफ तुम खुद आकर्षित होते हो।`,
+  sanket:n=>`${n}, शायद तुम्हें इसी समय यह याद दिलाने की ज़रूरत थी—सब कुछ खत्म नहीं हुआ है। जो चीज़ अभी छोटी लग रही है, वही आगे चलकर दिशा बदल सकती है। आज मिले इस छोटे संकेत को बस एक कदम में बदल दो।`
+};
+
+async function createPayment(){
+  const r=await fetch("/api/create-payment",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:state.name,feeling:state.feeling})});
+  const data=await r.json();
+  if(!r.ok||!data.ok)throw new Error(data.error||"payment");
+  return data;
+}
+
+function startLoading(){
+  show("loading");
+  const lines=["तुम्हारा नाम पढ़ा जा रहा है...","तुम्हारी बात को समझा जा रहा है...","तुम्हारे लिए शब्द चुने जा रहे हैं...","बस एक पल और..."];
+  let i=0;$('loadText').textContent=lines[0];
+  const t=setInterval(()=>{i++;if(i<lines.length)$('loadText').textContent=lines[i];},1100);
+  setTimeout(()=>{clearInterval(t);$('message').textContent=messages[state.feeling](state.name);show('result')},4700);
+}
+
+$('payBtn').onclick=async()=>{
+  $('payErr').textContent="";
+  $('payBtn').disabled=true;
+  try{
+    const data=await createPayment();
+    localStorage.setItem("sandesh_state",JSON.stringify(state));
+    const options={
+      key:data.keyId,
+      amount:data.amount,
+      currency:data.currency,
+      name:"आज का संदेश",
+      description:"Personalized digital message",
+      order_id:data.orderId,
+      prefill:{name:state.name},
+      notes:{feeling:state.feeling},
+      theme:{color:"#c58a32"},
+      modal:{ondismiss:()=>{$('payBtn').disabled=false;$('payErr').textContent="भुगतान बंद कर दिया गया।"}},
+      handler:async response=>{
+        try{
+          const r=await fetch("/api/verify-payment",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({orderId:response.razorpay_order_id,paymentId:response.razorpay_payment_id,signature:response.razorpay_signature,name:state.name,feeling:state.feeling})});
+          const result=await r.json();
+          if(!r.ok||!result.ok)throw new Error(result.error||"Payment verification failed.");
+          startLoading();
+        }catch(e){console.error(e);$('payBtn').disabled=false;$('payErr').textContent="भुगतान हो गया हो तो कृपया पेज refresh मत करो। Verification में समस्या आई।"}
+      }
+    };
+    const rzp=new Razorpay(options);
+    rzp.on('payment.failed',response=>{$('payBtn').disabled=false;$('payErr').textContent="भुगतान पूरा नहीं हुआ। फिर से कोशिश कर सकते हो।";console.error(response.error)});
+    rzp.open();
+  }catch(e){console.error(e);$('payBtn').disabled=false;$('payErr').textContent=e.message||"अभी भुगतान शुरू नहीं हो सका। Razorpay settings जाँचें."}
+};
+
+const params=new URLSearchParams(location.search);
+if(params.get("payment")==="failed"){$('payErr').textContent="भुगतान पूरा नहीं हुआ। फिर से कोशिश कर सकते हो।";history.replaceState({},"",location.pathname)}
+
+function shareText(){return `“${$("message").textContent}”\n\n— आज का संदेश\nhttps://madebyx.world`}
+$("copyBtn").onclick=async()=>{await navigator.clipboard.writeText(shareText());$("copyBtn").textContent="कॉपी हो गया ✓";setTimeout(()=>$("copyBtn").textContent="संदेश कॉपी करो",1500)}
+$("shareBtn").onclick=async()=>{
+  const data={title:"आज का संदेश",text:`${state.name} के लिए आज का संदेश:\n\n${$("message").textContent}`};
+  if(navigator.share)await navigator.share(data);else{$("copyBtn").click()}
+};
+</script>
+</body>
+</html>
